@@ -3,10 +3,10 @@
 #define wh_connectionH
 //---------------------------------------------------------------------------
 #include <windows.h>
+#include <iomanip>
 #include <iostream>
 #include <sql.h>
 #include <sqlext.h>
-#include <iomanip>
 #include <sstream>
 //---------------------------------------------------------------------------
 
@@ -17,18 +17,18 @@ using std::cout;
 using std::endl;
 using std::string;
 //using std::to_string;
-template < typename T > string to_string( const T& n )
+template <typename T>
+string to_string(const T& n)
 {
-	std::ostringstream stm ;
-	stm << n ;
-	return stm.str() ;
+	std::ostringstream stm;
+	stm << n;
+	return stm.str();
 }
 
 void extract_error(
     char* fn,
     SQLHANDLE handle,
     SQLSMALLINT type);
-
 
 // соединение и команды управления базой
 class connection {
@@ -49,7 +49,7 @@ public:
 	// приход
 	string add_product(string);
 	// просмотр склада
-//	string check_store(string);
+	//	string check_store(string);
 	string prod_in_state(string);
 
 	string outgo_product(string);

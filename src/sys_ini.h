@@ -7,80 +7,76 @@
  16.03.21	v0.2 - переделан на работу с std::string
 -----------------------------------------------------------------------------*/
 
-
 //---------------------------------------------------------------------------
 #ifndef sys_iniH
 #define sys_iniH
 //---------------------------------------------------------------------------
 
-#include <string>
-#include <vector>
 #include <algorithm>
 #include <sstream>
+#include <string>
+#include <vector>
 
 //---------------------------------------------------------------------------
-//---------------------------------------------------------------------------
-namespace app
-{
 
-using std::vector;
+namespace app {
+
 using std::string;
 using std::transform;
+using std::vector;
 
-string to_lower(string in)
+inline string to_lower(string in)
 {
 	char* locale = setlocale(LC_ALL, NULL);
 	setlocale(LC_ALL, "rus");
-	transform(in.begin(), in.end(), in.begin(),tolower);
+	transform(in.begin(), in.end(), in.begin(), tolower);
 	setlocale(LC_ALL, locale);
 	return in;
 }
 
-int to_int(string const& s)
+inline int to_int(string const& s)
 {
 	return atoi(s.c_str());
 }
 
-string to_string(int i)
+inline string to_string(int i)
 {
 	std::stringstream out;
 	out << i;
 	return out.str();
 }
 
-double to_double(string const& s)
+inline double to_double(string const& s)
 {
 	return atof(s.c_str());
 }
 
-string to_string(double i)
+inline string to_string(double i)
 {
 	std::stringstream out;
 	out << i;
 	return out.str();
 }
 
-bool to_bool(string const& s)
+inline bool to_bool(string const& s)
 {
-	 return s != "0";
+	return s != "0";
 }
 
-string to_string(bool b)
+inline string to_string(bool b)
 {
 	return b ? "true" : "false";
 }
 
-class ini
-{
+class ini {
 public:
-
 	ini(string n = "")
 	{
 		filename_ = n;
 		if (filename_ == "")
 			filename_ = get_app_name() + ".ini";
-//		if (ExtractFilePath(filename_) == "")
-//			filename_ = ExtractFilePath(Application->ExeName) + "\\" + filename_;
+		//		if (ExtractFilePath(filename_) == "")
+		//			filename_ = ExtractFilePath(Application->ExeName) + "\\" + filename_;
 		get_sections();
 		all_lower_ = false;
 		//		if(filename_=="") filename_ = Application->ExeName + ".ini";
@@ -113,7 +109,8 @@ public:
 	typedef vector<string>::iterator key_iterator;
 	vector<string>::iterator begin_key(string s)
 	{
-		get_keys(s);return keys_.begin();
+		get_keys(s);
+		return keys_.begin();
 	};
 	vector<string>::iterator end_key()
 	{
@@ -126,8 +123,7 @@ public:
 	{
 		const int bufsize = 60000;
 		static char buf[bufsize];
-		GetPrivateProfileString(group.c_str(), key.c_str(), def.c_str(), buf
-			, bufsize, filename_.c_str());
+		GetPrivateProfileString(group.c_str(), key.c_str(), def.c_str(), buf, bufsize, filename_.c_str());
 		if (all_lower_)
 			return to_lower(string(buf));
 		else
@@ -137,12 +133,9 @@ public:
 	bool get_bool(string group, string key, bool def = false)
 	{
 		bool c = def;
-		try
-		{
+		try {
 			c = to_bool(get(group, key, to_string(def)));
-		}
-		catch (...)
-		{
+		} catch (...) {
 		}
 		return c;
 	}
@@ -156,7 +149,7 @@ public:
 	{
 		return to_double(get(group, key, to_string(def)));
 	}
-/*
+	/*
 	TDateTime get_date(string group, string key)//,TDateTime def = Date())
 	{
 		//		return StrToDateTime(get(group,key,DateTimeToStr(def)));
@@ -171,11 +164,9 @@ public:
 	void set(string group, string key, string val)
 	{
 		if (all_lower_)
-			WritePrivateProfileString(group.c_str(), key.c_str()
-				, to_lower(val).c_str(), filename_.c_str());
+			WritePrivateProfileString(group.c_str(), key.c_str(), to_lower(val).c_str(), filename_.c_str());
 		else
-			WritePrivateProfileString(group.c_str(), key.c_str(), val.c_str()
-				, filename_.c_str());
+			WritePrivateProfileString(group.c_str(), key.c_str(), val.c_str(), filename_.c_str());
 	}
 
 	void set_bool(string group, string key, bool val)
@@ -192,35 +183,30 @@ public:
 	{
 		set(group, key, to_string(val));
 	}
-/*
+	/*
 	void set_date(string group, string key, TDateTime val)
 	{
 		set(group, key, DateTimeToStr(val));
 	}
 */
 private:
-
 	string filename_;
 	vector<string> sections_;
 	vector<string> keys_;
 	bool all_lower_;
 
-
 	void get_keys(string sect)
 	{
 		const int bufsize = 4096;
 		static char buf[bufsize];
-		int cnt = GetPrivateProfileSection(sect.c_str(), buf, bufsize
-				, filename_.c_str());
+		int cnt = GetPrivateProfileSection(sect.c_str(), buf, bufsize, filename_.c_str());
 		keys_.clear();
 		if (cnt == 0)
 			return;
 		string b = "";
-		for (int i = 0; i != cnt; i++)
-		{
-			if (buf[i] == '\0')
-			{
-				keys_.push_back(b.substr(0, b.find("=",0)));
+		for (int i = 0; i != cnt; i++) {
+			if (buf[i] == '\0') {
+				keys_.push_back(b.substr(0, b.find("=", 0)));
 				b = "";
 				continue;
 			}
@@ -237,10 +223,8 @@ private:
 		if (cnt == 0)
 			return;
 		string b = "";
-		for (int i = 0; i != cnt; i++)
-		{
-			if (buf[i] == '\0')
-			{
+		for (int i = 0; i != cnt; i++) {
+			if (buf[i] == '\0') {
 				sections_.push_back(b);
 				b = "";
 				continue;
@@ -251,18 +235,16 @@ private:
 
 	string get_app_name()
 	{
-    char buf[MAX_PATH];
-    GetModuleFileNameA(NULL, buf, MAX_PATH);
+		char buf[MAX_PATH];
+		GetModuleFileNameA(NULL, buf, MAX_PATH);
 		string s(buf);
-		string fn = s.substr(0,s.find(".",0));
+		string fn = s.substr(0, s.find(".", 0));
 		return fn;
 	}
 };
 
-class app_ini
-{
+class app_ini {
 public:
-
 	static ini& get(string g = "")
 	{
 		static ini statiini(g.c_str());
@@ -280,10 +262,11 @@ public:
 		}
 	*/
 private:
-
 	app_ini();
 	~app_ini();
 };
+
 }; //namespace app
+
 //---------------------------------------------------------------------------
 #endif

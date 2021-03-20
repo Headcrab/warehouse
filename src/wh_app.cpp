@@ -6,15 +6,13 @@
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 
-namespace wh
-{
-
+namespace wh {
 
 string to_lower(string in)
 {
 	char* locale = setlocale(LC_ALL, NULL);
 	setlocale(LC_ALL, "rus");
-	transform(in.begin(), in.end(), in.begin(),tolower);
+	transform(in.begin(), in.end(), in.begin(), tolower);
 	setlocale(LC_ALL, locale);
 	return in;
 }

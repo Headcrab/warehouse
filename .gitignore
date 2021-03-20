@@ -3,3 +3,5 @@ bin/*.exe
 bin/*.tds
 db/*.*
 obj/*.*
+*.bcc32pch
+*.res

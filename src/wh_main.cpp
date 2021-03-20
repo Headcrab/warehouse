@@ -1,14 +1,13 @@
-#include <windows.h>
-#include <stdio>
-#include <stdlib>
-#include <iostream>
-#include <sql.h>
-#include <sqlext.h>
-#include <string>
 #include "wh_app.h"
 #include "wh_connection.h"
+#include <windows.h>
+#include <iostream>
 #include <map>
-//#include "odbc32.lib"
+#include <sql.h>
+#include <sqlext.h>
+#include <stdio>
+#include <stdlib>
+#include <string>
 
 using std::cin;
 using std::cout;
@@ -21,8 +20,8 @@ int main(int argc, char** argv)
 	wh::app app;
 	wh::connection conn;
 
-	if(!conn.init("DSN="+app.ini.get("connection","DSN")+";Uid="
-	+app.ini.get("connection","Uid")+";Pwd="+app.ini.get("connection","Pwd")+""))
+	if (!conn.init("DSN=" + app.ini.get("connection", "DSN") + ";Uid="
+		+ app.ini.get("connection", "Uid") + ";Pwd=" + app.ini.get("connection", "Pwd") + ""))
 		return 1;
 
 	// объявляю команды
@@ -36,8 +35,9 @@ int main(int argc, char** argv)
 	command["a"] = &conn.add_product;
 	command["i"] = &conn.prod_in_state;
 	command["l"] = &conn.store_state;
-//	command["c"] = &conn.check_store;
-/*
+	command["c"] = &conn.prod_out_state;
+	command["o"] = &conn.outgo_product;
+	/*
 	// словом тоже можно
 	command["store"] = &conn.store_state;
 	command["select"] = &conn.select;
@@ -54,14 +54,11 @@ int main(int argc, char** argv)
 
 	// бесконечный цикл пока пользователь не даст команду на выход
 	typedef map<string, fptr>::iterator whmi;
-	while (true)
-	{
+	while (true) {
 		cl = "";
 		cout << ("команда->");
 		cin >> cl;
-//		cl+=" ";
 		whmi mi = command.find(wh::to_lower(cl));
-//		whmi mi = command.find(wh::to_lower(cl.substr(0,cl.find(" ",0))));
 		if (mi == command.end()) {
 			app.wrong(cl);
 			continue;

@@ -11,10 +11,10 @@
     <DEFFILE value=""/>
     <RESDEPEN value="$(RESFILES)"/>
     <LIBFILES value="&quot;C:\Program Files (x86)\Borland\CBuilder6\Lib\Psdk\odbc32.lib&quot;"/>
-    <LIBRARIES value="dac60.lib unidac60.lib bdertl.lib vcldb.lib adortl.lib dclusr.lib vclx.lib 
+    <LIBRARIES value="bdertl.lib vcldb.lib adortl.lib dclusr.lib vclx.lib 
       dbrtl.lib rtl.lib vcl.lib"/>
     <SPARELIBS value="vcl.lib rtl.lib dbrtl.lib vclx.lib dclusr.lib adortl.lib vcldb.lib 
-      bdertl.lib unidac60.lib dac60.lib"/>
+      bdertl.lib"/>
     <PACKAGES value="vcl.bpi rtl.bpi dbrtl.bpi adortl.bpi vcldb.bpi vclx.bpi bdertl.bpi 
       vcldbx.bpi"/>
     <PATHCPP value=".;"/>
