@@ -1,0 +1,185 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="..\bin\wh.exe"/>
+    <OBJFILES value="..\obj\wh_main.obj ..\obj\wh_app.obj ..\obj\wh_connection.obj"/>
+    <RESFILES value="wh.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES)"/>
+    <LIBFILES value="&quot;C:\Program Files (x86)\Borland\CBuilder6\Lib\Psdk\odbc32.lib&quot;"/>
+    <LIBRARIES value="dac60.lib unidac60.lib bdertl.lib vcldb.lib adortl.lib dclusr.lib vclx.lib 
+      dbrtl.lib rtl.lib vcl.lib"/>
+    <SPARELIBS value="vcl.lib rtl.lib dbrtl.lib vclx.lib dclusr.lib adortl.lib vcldb.lib 
+      bdertl.lib unidac60.lib dac60.lib"/>
+    <PACKAGES value="vcl.bpi rtl.bpi dbrtl.bpi adortl.bpi vcldb.bpi vclx.bpi bdertl.bpi 
+      vcldbx.bpi"/>
+    <PATHCPP value=".;"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value="_DEBUG;_DWORD_DEFINED;_ULONG_DEFINED"/>
+    <SYSDEFINES value="NO_STRICT;_NO_VCL;_RTLDLL"/>
+    <MAINSOURCE value="wh.bpf"/>
+    <INCLUDEPATH value="$(BCB)\Projects;$(BCB)\include;$(BCB)\include\vcl"/>
+    <LIBPATH value="$(BCB)\Projects;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\lib\debug"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-src_suffix cpp -D_DEBUG -D_DWORD_DEFINED -D_ULONG_DEFINED 
+      -I$(BCB)\Projects -I$(BCB)\include -I$(BCB)\include\vcl -boa"/>
+    <CFLAG1 value="-Od -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -VF -X- -r- -a8 -b- -k -y -v -vi- 
+      -tWC -tWM -c"/>
+    <PFLAGS value="-N2..\obj -N0..\obj -$YD -$W -$O- -$A8 -v -JPHNE -M"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zi"/>
+    <LFLAGS value="-l..\obj -I..\obj -D&quot;&quot; -ap -Tpe -x -Gn -v"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0x32.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cw32mti.lib"/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="wh.res" FORMNAME="" UNITNAME="wh.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="wh.bpf" FORMNAME="" UNITNAME="wh" CONTAINERID="BPF" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="wh_main.cpp" FORMNAME="" UNITNAME="wh_main" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="wh_app.cpp" FORMNAME="" UNITNAME="wh_app" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="wh_connection.cpp" FORMNAME="" UNITNAME="wh_connection" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="sys_ini.h" FORMNAME="" UNITNAME="sys_ini.h" CONTAINERID="" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="C:\Program Files (x86)\Borland\CBuilder6\Lib\Psdk\odbc32.lib" FORMNAME="" UNITNAME="odbc32.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+
+  <FILES>
+    <FILE type="override" value="wh_main.cpp" translator="Auto">
+    </FILE>
+  </FILES>
+
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=0
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1049
+CodePage=1251
+
+[Version Info Keys]
+CompanyName=
+FileDescription=
+FileVersion=1.0.0.0
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.0.0.0
+Comments=
+
+[Excluded Packages]
+c:\program files (x86)\borland\cbuilder6\Bin\bcbie60.bpl=Borland C++Builder Internet Explorer 5 Components Package
+
+[HistoryLists\hlIncludePath]
+Count=11
+Item0=$(BCB)\Projects;$(BCB)\include;$(BCB)\include\vcl
+Item1=C:\Program Files (x86)\Devart\UniDAC for CBuilder 6\Include;..;$(BCB)\Projects;$(BCB)\include;$(BCB)\include\vcl
+Item2=C:\Program Files (x86)\Devart\UniDAC for CBuilder 6\Include;..\;..;$(BCB)\Projects;$(BCB)\include;$(BCB)\include\vcl
+Item3=..\;$(BCB)\Projects;$(BCB)\include;$(BCB)\include\vcl
+Item4=..;DataSetsForPrint;X:\Source\apo2\Modules\OSGOP_SCC;$(BCB)\Projects;$(BCB)\include;$(BCB)\include\vcl;$(RXLib)\Units;$(GlobusLib)\Units;$(ToDeveloper_bcb6);$(FastReport_bcb6)\Source;$(FastReport_bcb6)\Source\DBX;$(FastReport_bcb6)\Source\ExportPack;$(FastReport_bcb6)\LibBCB6;$(FastReport_bcb6)\FastScript;$(AlphaControls_bcb6)\CB6;$(DevExpress_bcb6)\Library\CBuilder6;$(EhLib_bcb6)\BCB6;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\SDK\Include
+Item5=..\;..;DataSetsForPrint;X:\Source\apo2\Modules\OSGOP_SCC;$(BCB)\Projects;$(BCB)\include;$(BCB)\include\vcl;$(RXLib)\Units;$(GlobusLib)\Units;$(ToDeveloper_bcb6);$(FastReport_bcb6)\Source;$(FastReport_bcb6)\Source\DBX;$(FastReport_bcb6)\Source\ExportPack;$(FastReport_bcb6)\LibBCB6;$(FastReport_bcb6)\FastScript;$(AlphaControls_bcb6)\CB6;$(DevExpress_bcb6)\Library\CBuilder6;$(EhLib_bcb6)\BCB6;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\SDK\Include
+Item6=..\;..;DataSetsForPrint;X:\Source\apo2\Modules\OSGOP_SCC;$(BCB)\Projects;$(BCB)\include;$(BCB)\include\vcl;$(RXLib)\Units;$(GlobusLib)\Units;$(ToDeveloper_bcb6);$(FastReport_bcb6)\Source;$(FastReport_bcb6)\Source\DBX;$(FastReport_bcb6)\Source\ExportPack;$(FastReport_bcb6)\LibBCB6;$(FastReport_bcb6)\FastScript;$(AlphaControls_bcb6)\CB6;$(DevExpress_bcb6)\Library\CBuilder6;$(EhLib_bcb6)\BCB6
+Item7=..\;X:\Source\warehouse;DataSetsForPrint;X:\Source\apo2\Modules\OSGOP_SCC;$(BCB)\Projects;$(BCB)\include;$(BCB)\include\vcl;$(RXLib)\Units;$(GlobusLib)\Units;$(ToDeveloper_bcb6);$(FastReport_bcb6)\Source;$(FastReport_bcb6)\Source\DBX;$(FastReport_bcb6)\Source\ExportPack;$(FastReport_bcb6)\LibBCB6;$(FastReport_bcb6)\FastScript;$(AlphaControls_bcb6)\CB6;$(DevExpress_bcb6)\Library\CBuilder6;$(EhLib_bcb6)\BCB6
+Item8=X:\Source\warehouse;DataSetsForPrint;X:\Source\apo2\Modules\OSGOP_SCC;$(BCB)\Projects;$(BCB)\include;$(BCB)\include\vcl;$(RXLib)\Units;$(GlobusLib)\Units;$(ToDeveloper_bcb6);$(FastReport_bcb6)\Source;$(FastReport_bcb6)\Source\DBX;$(FastReport_bcb6)\Source\ExportPack;$(FastReport_bcb6)\LibBCB6;$(FastReport_bcb6)\FastScript;$(AlphaControls_bcb6)\CB6;$(DevExpress_bcb6)\Library\CBuilder6;$(EhLib_bcb6)\BCB6
+Item9=DataSetsForPrint;X:\Source\apo2\Modules\OSGOP_SCC;$(BCB)\Projects;$(BCB)\include;$(BCB)\include\vcl;$(RXLib)\Units;$(GlobusLib)\Units;$(ToDeveloper_bcb6);$(FastReport_bcb6)\Source;$(FastReport_bcb6)\Source\DBX;$(FastReport_bcb6)\Source\ExportPack;$(FastReport_bcb6)\LibBCB6;$(FastReport_bcb6)\FastScript;$(AlphaControls_bcb6)\CB6;$(DevExpress_bcb6)\Library\CBuilder6;$(EhLib_bcb6)\BCB6
+Item10=DataSetsForPrint;X:\Source\apo2\Modules\OSGOP_SCC\DataSetsForPrint;X:\Source\apo2\Modules\OSGOP_SCC;$(BCB)\Projects;$(BCB)\include;$(BCB)\include\vcl;$(RXLib)\Units;$(GlobusLib)\Units;$(ToDeveloper_bcb6);$(FastReport_bcb6)\Source;$(FastReport_bcb6)\Source\DBX;$(FastReport_bcb6)\Source\ExportPack;$(FastReport_bcb6)\LibBCB6;$(FastReport_bcb6)\FastScript;$(AlphaControls_bcb6)\CB6;$(DevExpress_bcb6)\Library\CBuilder6;$(EhLib_bcb6)\BCB6
+
+[HistoryLists\hlLibraryPath]
+Count=11
+Item0=$(BCB)\Projects;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\lib\debug
+Item1=C:\Program Files (x86)\Devart\UniDAC for CBuilder 6\Include;..;..\..\apo2\bin;X:\lib_apo\devx\Library\CBuilder6;$(BCB)\Projects;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\lib\debug
+Item2=C:\Program Files (x86)\Devart\UniDAC for CBuilder 6\Include;..\;..;..\..\apo2\bin;X:\lib_apo\devx\Library\CBuilder6;$(BCB)\Projects;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\lib\debug
+Item3=..\;..\..\apo2\bin;X:\lib_apo\devx\Library\CBuilder6;$(BCB)\Projects;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\lib\debug
+Item4=..\..\apo2\bin;X:\lib_apo\devx\Library\CBuilder6;$(BCB)\Projects;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\lib\debug
+Item5=..;..\..\apo2\bin;..\apo2\bin;DataSetsForPrint;X:\Source\apo2\Modules\OSGOP_SCC;..\..\bin;..\..\bin\debug;..\..\mops_api;$(BCB)\Projects;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\lib\debug;$(RXLib)\Units;$(FastReport_bcb6)\Source;$(FastReport_bcb6)\LibBCB6;$(FastReport_bcb6)\Source\ExportPack;$(AlphaControls_bcb6)\CB6;$(DevExpress_bcb6)\Library\CBuilder6;$(EhLib_bcb6)\BCB6
+Item6=..\;..;..\..\apo2\bin;..\apo2\bin;DataSetsForPrint;X:\Source\apo2\Modules\OSGOP_SCC;..\..\bin;..\..\bin\debug;..\..\mops_api;$(BCB)\Projects;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\lib\debug;$(RXLib)\Units;$(FastReport_bcb6)\Source;$(FastReport_bcb6)\LibBCB6;$(FastReport_bcb6)\Source\ExportPack;$(AlphaControls_bcb6)\CB6;$(DevExpress_bcb6)\Library\CBuilder6;$(EhLib_bcb6)\BCB6
+Item7=..\;..\..\apo2\bin;..\apo2\bin;X:\Source\warehouse;DataSetsForPrint;X:\Source\apo2\Modules\OSGOP_SCC;..\..\bin;..\..\bin\debug;..\..\mops_api;$(BCB)\Projects;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\lib\debug;$(RXLib)\Units;$(FastReport_bcb6)\Source;$(FastReport_bcb6)\LibBCB6;$(FastReport_bcb6)\Source\ExportPack;$(AlphaControls_bcb6)\CB6;$(DevExpress_bcb6)\Library\CBuilder6;$(EhLib_bcb6)\BCB6
+Item8=X:\Source\warehouse;DataSetsForPrint;X:\Source\apo2\Modules\OSGOP_SCC;..\..\bin;..\..\bin\debug;..\..\mops_api;$(BCB)\Projects;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\lib\debug;$(RXLib)\Units;$(FastReport_bcb6)\Source;$(FastReport_bcb6)\LibBCB6;$(FastReport_bcb6)\Source\ExportPack;$(AlphaControls_bcb6)\CB6;$(DevExpress_bcb6)\Library\CBuilder6;$(EhLib_bcb6)\BCB6
+Item9=DataSetsForPrint;X:\Source\apo2\Modules\OSGOP_SCC;..\..\bin;..\..\bin\debug;..\..\mops_api;$(BCB)\Projects;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\lib\debug;$(RXLib)\Units;$(FastReport_bcb6)\Source;$(FastReport_bcb6)\LibBCB6;$(FastReport_bcb6)\Source\ExportPack;$(AlphaControls_bcb6)\CB6;$(DevExpress_bcb6)\Library\CBuilder6;$(EhLib_bcb6)\BCB6
+Item10=DataSetsForPrint;X:\Source\apo2\Modules\OSGOP_SCC\DataSetsForPrint;X:\Source\apo2\Modules\OSGOP_SCC;..\..\bin;..\..\bin\debug;..\..\mops_api;$(BCB)\Projects;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\lib\debug;$(RXLib)\Units;$(FastReport_bcb6)\Source;$(FastReport_bcb6)\LibBCB6;$(FastReport_bcb6)\Source\ExportPack;$(AlphaControls_bcb6)\CB6;$(DevExpress_bcb6)\Library\CBuilder6;$(EhLib_bcb6)\BCB6
+
+[HistoryLists\hlDebugSourcePath]
+Count=2
+Item0=$(BCB)\source\vcl
+Item1=$(BCB)\source\vcl;X:\Source\apo2\Modules\OSGOP_SCC
+
+[HistoryLists\hlConditionals]
+Count=2
+Item0=_DEBUG;_DWORD_DEFINED;_ULONG_DEFINED
+Item1=_DEBUG
+
+[HistoryLists\hlIntOutputDir]
+Count=2
+Item0=..\obj
+Item1=obj
+
+[HistoryLists\hlFinalOutputDir]
+Count=4
+Item0=..\bin\
+Item1=..\bin
+Item2=..\..\bin\debug\
+Item3=..\..\bin\debug
+
+[HistoryLists\hIBPIOutputDir]
+Count=2
+Item0=..\obj
+Item1=obj
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=1
+LinkCGLIB=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+
+[Language]
+ActiveLang=
+ProjectLang=
+RootDir=
+  </IDEOPTIONS>
+</PROJECT>
